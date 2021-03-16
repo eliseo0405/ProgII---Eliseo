@@ -19,8 +19,7 @@ import ni.uni.edu.programacion.views.panels.PnlMoneda;
 public class FrmConversionApp extends javax.swing.JFrame {
     private PnlCalculator pnlCalculator;
     private CalculatorController calculatorController;
-    private PnlTemperature PnlTemperature;
-    private TemperatureController TemperatureController;
+    private pnlConversionTemplate = new PnlConversionTemplate;
     private PnlMoneda pnlMoneda;
     private MonedaController MonedaController;
     
@@ -84,10 +83,10 @@ public class FrmConversionApp extends javax.swing.JFrame {
 
         btnCurrency.setText("Moneda");
         btnCurrency.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 btnCurrencyAncestorAdded(evt);
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
@@ -125,8 +124,8 @@ public class FrmConversionApp extends javax.swing.JFrame {
 
     private void btnTemperatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTemperatureActionPerformed
           if(PnlTemperature == null){
-           PnlTemperature = new PnlTemperature();
-           TemperatureController = new TemperatureController(PnlTemperature);
+           PnlCTTemperature = new PnlTemperature();
+           pnlTemperatureController = new pnlTemperatureController(PnlCTTemperature);
        }
        
        if(pnlContent.getComponentCount() > 0){
